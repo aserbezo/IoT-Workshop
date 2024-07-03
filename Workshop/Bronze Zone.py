@@ -4,13 +4,8 @@ from pyspark.sql.types import *
 
 # COMMAND ----------
 
-dbutils.widgets.text("storage_access_key", "", "Storage Access Key")
-dbutils.widgets.text("connectionString", "", "connectionStringEventHub")
-
-# COMMAND ----------
-
 storage_account_name = "storageiottest1"
-access_key = dbutils.widgets.get("storage_access_key")
+access_key =  dbutils.secrets.get('iot-kv', 'storageAccessKey')
 
 def mount_containers():
     try:
@@ -84,8 +79,13 @@ def write_to_bronze(connection_string, bronze_path, checkpoint_path):
         print(f'An error occurred: {e}')
 
 # Usage example
-connection_string = dbutils.widgets.get("connectionString")
+#connection_string = dbutils.widgets.get("connectionString")
+connection_string =  dbutils.secrets.get('iot-kv', 'eventHubConnectionString')
 bronze_path = "/mnt/bronze"
 checkpoint_path = "/mnt/bronze_checkpoint"
 
 write_to_bronze(connection_string, bronze_path, checkpoint_path)
+
+# COMMAND ----------
+
+
