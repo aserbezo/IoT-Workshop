@@ -50,3 +50,34 @@ Go to Azure Portal -> Create a new IoT Hub -> Fill in necessary details and crea
 - Register IoT Devices:
 
 Navigate to your IoT Hub -> Devices -> Add new device -> Provide Device ID and create -> Note the connection string.
+
+### Step 2: Dowload the IoT-device simulator 
+
+- replace with connection string
+
+### Step 3: Configure Azure Stream Analytics
+
+1. Create a Stream Analytics Job:
+- Azure Portal -> Create Stream Analytics job -> Fill in details.
+2. Set Up Input:
+- Input alias: carDataInput
+- Source type: IoT Hub
+- Select IoT Hub and consumer group.
+3. Set Up Output:
+- Output alias: carDataOutput
+- Sink type: Power BI (authorize and configure Power BI workspace, dataset, and table).
+
+### Step 4: Set Up Databricks for Advanced Analytics
+1. Create a Databricks workspace:
+- Azure Portal -> Create Databricks service -> Workspace -> Create.
+- Load data from Azure Stream Analytics or IoT Hub to Databricks:
+- Use Databricks notebooks to connect and analyze the data.
+2.Develop Machine Learning models:
+- Use Databricks to train models for predictive maintenance, route optimization, and driver behavior analysis.
+
+### Step 5: Visualize Data with Power BI
+- Create Dashboards:
+Use Power BI to connect to the dataset created by Stream Analytics.
+Develop interactive dashboards to visualize vehicle status, fuel levels, maintenance alerts, and route information.
+- Real-time Monitoring:
+Enable real-time data updates in Power BI to monitor the fleet’s status continuously.
