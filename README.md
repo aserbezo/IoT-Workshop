@@ -60,11 +60,11 @@ Navigate to your IoT Hub -> Devices -> Add new device -> Provide Device ID and c
 1. Create a Stream Analytics Job:
 - Azure Portal -> Create Stream Analytics job -> Fill in details.
 2. Set Up Input:
-- Input alias: carDataInput
+- Input alias: EventHub
 - Source type: IoT Hub
 - Select IoT Hub and consumer group.
-3. Set Up Output:
-- Output alias: carDataOutput
+3. Set Up Output: Bronze zone in Storage acount
+- Output alias: 
 - Sink type: Power BI (authorize and configure Power BI workspace, dataset, and table).
 
 ### Step 4: Set Up Databricks for Advanced Analytics
