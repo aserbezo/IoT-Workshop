@@ -15,68 +15,32 @@ To implement a fleet management system that leverages IoT devices, IoT Hub, Data
 ![image](https://github.com/user-attachments/assets/a44c45c3-5350-450f-8bf0-ff1f909d7ecc)
 
 
-### 1. IoT Device
 
-Install IoT devices on each vehicle to collect telemetry data such as speed, fuel level, engine temperature, and GPS coordinates.
-
-### 2. IoT Hub
-
-Act as a central hub for ingesting data from all IoT devices installed in the vehicles.
-Ensure secure and reliable communication between the IoT devices and the cloud.
-
-### 3. Azure Stream Analytics
-
-Process and analyze the real-time data streams from the IoT Hub.
-Filter and transform the incoming data to extract valuable insights such as abnormal driving patterns, engine overheating alerts, or low fuel warnings.
-
-### 4. Databricks
-
-Perform advanced analytics and machine learning on the historical data to predict vehicle maintenance needs, optimize routes, and analyze driver behavior.
-Provide a scalable environment to handle large volumes of data.
-
-### 5. Power BI
-
-Visualize the processed data and analytics results in interactive dashboards.
-Enable fleet managers to monitor the status of the fleet in real-time and make data-driven decisions.
+Resources needs to be created:
+1. IoT hub
+2. Stoage Account
+3. Stream Job
+4. Databricks
+5. Key vault
+6. Event Hub
 
 
-## Implementation Steps:
 
-### Step 1: Set Up IoT Hub and Register IoT Devices
-- Create IoT Hub:
-Go to Azure Portal -> Create a new IoT Hub -> Fill in necessary details and create the hub.
+STEP BY STEP 
 
-- Register IoT Devices:
+### 1. Create a IoT hub and register the IoT devices
 
-Navigate to your IoT Hub -> Devices -> Add new device -> Provide Device ID and create -> Note the connection string.
 
-### Step 2: Dowload the IoT-device simulator 
+### 2. Configure the routes of the devices to point to Event Hub 
 
-- replace with connection string
+### 3. Create a Strem job to send data to Storage account and Power BI real time report 
 
-### Step 3: Configure Azure Stream Analytics
+```sh
+SELECT I1.DeviceId, I1.Latitude , I1.Longitude , I1.time, I1.temp,I1.tire_press,I1.speed,I1.alert,I2.driver_id ,I2.first_name,I2.last_name , I2.car_model, I2.experiance,I2.car_mileage_km
+INTO [IoT-PBI-workshop]
+FROM [drivers-cars1] I1 
+LEFT JOIN [ref] I2
+ON I1.DeviceId = I2.first_name
+```
 
-1. Create a Stream Analytics Job:
-- Azure Portal -> Create Stream Analytics job -> Fill in details.
-2. Set Up Input:
-- Input alias: EventHub
-- Source type: IoT Hub
-- Select IoT Hub and consumer group.
-3. Set Up Output: Bronze zone in Storage acount
-- Output alias: 
-- Sink type: Power BI (authorize and configure Power BI workspace, dataset, and table).
-
-### Step 4: Set Up Databricks for Advanced Analytics
-1. Create a Databricks workspace:
-- Azure Portal -> Create Databricks service -> Workspace -> Create.
-- Load data from Azure Stream Analytics or IoT Hub to Databricks:
-- Use Databricks notebooks to connect and analyze the data.
-2.Develop Machine Learning models:
-- Use Databricks to train models for predictive maintenance, route optimization, and driver behavior analysis.
-
-### Step 5: Visualize Data with Power BI
-- Create Dashboards:
-Use Power BI to connect to the dataset created by Stream Analytics.
-Develop interactive dashboards to visualize vehicle status, fuel levels, maintenance alerts, and route information.
-- Real-time Monitoring:
-Enable real-time data updates in Power BI to monitor the fleet’s status continuously.
+### 4. Databricks Notebook to read data from storage account and filter the data to silver zone and gold zone
