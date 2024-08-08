@@ -17,6 +17,8 @@ To implement a fleet management system that leverages IoT devices, IoT Hub, Data
 
 
 
+# 1 STEP - Create the resources 
+
 Resources needs to be created:
 1. IoT hub
 2. Stoage Account
@@ -25,22 +27,16 @@ Resources needs to be created:
 5. Key vault
 6. Event Hub
 
-# FIRST STEP - Create the resources 
+# 2 STEP - Dowload the IoT simulator
 
-In Oreder to create the resources we can use a terraform scipt or create them manualy from the portal.
+Clone and follow the instruction in read.md file :
+https://github.com/aserbezo/IoT-Device-Simulator.git
 
+# 3 STEP - register the IoT devices in IoT hub 
 
+# 4 STEP Configure the routes of the devices to point to Event Hub 
 
-
-
-STEP BY STEP 
-
-### 1. Create a IoT hub and register the IoT devices
-
-
-### 2. Configure the routes of the devices to point to Event Hub 
-
-### 3. Create a Strem job to send data to Storage account and Power BI real time report 
+# 5. STEP Create a Strem job to send data to Storage accounts(Hot and Cold) and Power BI real time report 
 
 ```sh
 SELECT I1.DeviceId, I1.Latitude , I1.Longitude , I1.time, I1.temp,I1.tire_press,I1.speed,I1.alert,I2.driver_id ,I2.first_name,I2.last_name , I2.car_model, I2.experiance,I2.car_mileage_km
@@ -50,4 +46,4 @@ LEFT JOIN [ref] I2
 ON I1.DeviceId = I2.first_name
 ```
 
-### 4. Databricks Notebook to read data from storage account and filter the data to silver zone and gold zone
+# 5. STEP Databricks Notebook to read data from storage account and filter the data to silver zone and gold zone
