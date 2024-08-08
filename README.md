@@ -12,7 +12,8 @@ To implement a fleet management system that leverages IoT devices, IoT Hub, Data
 
 
 ### Solution Components and Architecture:
-![image](https://github.com/user-attachments/assets/a44c45c3-5350-450f-8bf0-ff1f909d7ecc)
+
+![image](https://github.com/user-attachments/assets/d0b57eb0-3377-49f4-98d5-8900c7007062)
 
 
 
