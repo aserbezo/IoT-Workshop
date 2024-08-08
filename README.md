@@ -25,6 +25,12 @@ Resources needs to be created:
 5. Key vault
 6. Event Hub
 
+# FIRST STEP - Create the resources 
+
+In Oreder to create the resources we can use a terraform scipt or create them manualy from the portal.
+
+
+
 
 
 STEP BY STEP 
