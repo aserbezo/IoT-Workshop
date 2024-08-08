@@ -32,6 +32,8 @@ First, you need to create the following Azure resources:
 
 Clone the IoT Device Simulator repository and follow the instructions in the README.md file:
 
+- https://github.com/aserbezo/IoT-Device-Simulator.git
+
 ```sh
 git clone https://github.com/aserbezo/IoT-Device-Simulator.git
 ```
