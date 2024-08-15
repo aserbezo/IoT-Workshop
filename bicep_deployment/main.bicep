@@ -1,18 +1,23 @@
 // Define the parameters
+
+
+////////////////////////////////////////////////////////////
 param location string = 'East US'
-param resourceGroupName string = 'MyResourceGroup'
 param streamAnalyticsJobName1 string = 'MyStreamAnalyticsJob1'
 param streamAnalyticsJobName2 string = 'MyStreamAnalyticsJob2'
-param iotHubName string = 'MyIoTHub'
+param iotHubName string = 'MyIoTHubanton'
+param storageAccountName string = 'mystorageaccountanton1'
+param keyVaultName string = 'myKeyVault-anton'
 param databricksWorkspaceName string = 'MyDatabricksWorkspace'
-param storageAccountName string = 'mystorageaccount'
-param keyVaultName string = 'myKeyVault'
+param pricingTier 'standard'
+////////////////////////////////////////////////////////////
+// if you have issues with key vault az keyvault purge --name myKeyVault-anton    
 
-// Create the Resource Group
-resource rg 'Microsoft.Resources/resourceGroups@2023-05-01' = {
-  name: resourceGroupName
-  location: location
-}
+
+var managedResourceGroupName = 'databricks-rg-${databricksWorkspaceName}-${uniqueString(databricksWorkspaceName, resourceGroup().id)}'
+
+
+
 
 // Create the Storage Account
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
@@ -24,61 +29,75 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
   kind: 'StorageV2'
 }
 
-// Create the IoT Hub
-resource iotHub 'Microsoft.Devices/IotHubs@2023-01-01' = {
+// --- Resources
+resource IoTHub 'Microsoft.Devices/IotHubs@2023-06-30' = {
   name: iotHubName
   location: location
   sku: {
     name: 'S1'
     capacity: 1
-  }
-  properties: {
-    enableFileUploadNotifications: true
-  }
+  }  
 }
 
+
 // Create the first Stream Analytics Job
-resource streamAnalyticsJob1 'Microsoft.StreamAnalytics/streamingjobs@2023-01-01' = {
+resource streamingJob 'Microsoft.StreamAnalytics/streamingjobs@2021-10-01-preview' = {
   name: streamAnalyticsJobName1
   location: location
-  sku: {
-    name: 'Standard'
-  }
   properties: {
-    compatibilityLevel: '1.2'
-    jobType: 'Cloud'
+    sku: {
+      name: 'StandardV2'
+    }
+    outputErrorPolicy: 'Stop'
+    eventsOutOfOrderPolicy: 'Adjust'
+    eventsOutOfOrderMaxDelayInSeconds: 0
+    eventsLateArrivalMaxDelayInSeconds: 5
     dataLocale: 'en-US'
   }
 }
 
 // Create the second Stream Analytics Job
-resource streamAnalyticsJob2 'Microsoft.StreamAnalytics/streamingjobs@2023-01-01' = {
+resource streamingJob2 'Microsoft.StreamAnalytics/streamingjobs@2021-10-01-preview' = {
   name: streamAnalyticsJobName2
   location: location
-  sku: {
-    name: 'Standard'
-  }
   properties: {
-    compatibilityLevel: '1.2'
-    jobType: 'Cloud'
+    sku: {
+      name: 'StandardV2'
+    }
+    outputErrorPolicy: 'Stop'
+    eventsOutOfOrderPolicy: 'Adjust'
+    eventsOutOfOrderMaxDelayInSeconds: 0
+    eventsLateArrivalMaxDelayInSeconds: 5
     dataLocale: 'en-US'
   }
 }
 
+
 // Create the Databricks Workspace
-resource databricksWorkspace 'Microsoft.Databricks/workspaces@2023-02-01' = {
+
+resource ws 'Microsoft.Databricks/workspaces@2018-04-01' = {
   name: databricksWorkspaceName
   location: location
   sku: {
-    name: 'standard'
+    name: pricingTier
   }
   properties: {
-    managedResourceGroupId: resourceId('Microsoft.Resources/resourceGroups', '${resourceGroupName}-databricks')
+    managedResourceGroupId: managedResourceGroup.id
+    parameters: {
+      enableNoPublicIp: {
+        value: false
+      }
+    }
   }
 }
 
+resource managedResourceGroup 'Microsoft.Resources/resourceGroups@2021-04-01' existing = {
+  scope: subscription()
+  name: managedResourceGroupName
+}
+
 // Create the Key Vault
-resource keyVault 'Microsoft.KeyVault/vaults@2023-02-01' = {
+resource kv 'Microsoft.KeyVault/vaults@2023-07-01' = {
   name: keyVaultName
   location: location
   properties: {
