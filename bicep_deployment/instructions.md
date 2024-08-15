@@ -50,6 +50,15 @@ Replace <subscription-id> with the ID of the subscription you want to use. You c
 ```sh
 az account show --output table
 ```
+## 8 Create a resoruce group 
+
+![image](https://github.com/user-attachments/assets/5ade8857-105c-46bf-ba86-691e3937ac4f)
+
+
+## 8 Change the parameters in main.bicep file:
+
+![image](https://github.com/user-attachments/assets/10ee469f-69a4-4466-82ae-3a43b2b97ac2)
+
 
 ## 8. Deploy the Resource Group
 
@@ -60,4 +69,5 @@ az deployment group create --resource-group {YourResourceGroup} --template-file 
 ```
 This will deploy the resources defined in your Bicep file to the Resource Group within the currently active subscription.
 
+![image](https://github.com/user-attachments/assets/0670fc02-eaa9-4aa1-825a-2f5e9b498d4f)
 
