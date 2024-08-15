@@ -53,10 +53,10 @@ az account show --output table
 
 ## 8. Deploy the Resource Group
 
-Now that your desired subscription is set, you can proceed to deploy the Resource Group and other resources using your Bicep file:
+Now that your desired subscription is set, you can proceed to create a Resource Group, then the other resources using your Bicep file:
 
 ```sh
-az deployment group create --resource-group MyResourceGroup --template-file main.bicep
+az deployment group create --resource-group {YourResourceGroup} --template-file main.bicep
 ```
 This will deploy the resources defined in your Bicep file to the Resource Group within the currently active subscription.
 
