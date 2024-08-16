@@ -60,5 +60,5 @@ This simulator will generate telemetry data for your IoT devices.
 ----------------------------------------------------
 ![image](https://github.com/user-attachments/assets/46a8b747-747d-4afb-b788-6f5f359fed46)
 
-Follow the instructions in the [Hot-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/tree/main)
+Follow the instructions in the [Hot-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/hot-path.md)
 
