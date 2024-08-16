@@ -66,4 +66,5 @@ Follow the instructions in the [Hot-path instructions to complete the setup](htt
 
 ![image](https://github.com/user-attachments/assets/3c43a192-440d-4e45-a9a8-14eb5380d11e)
 
-Follow the instructions in the [Warm-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/hot-path.md)
+Follow the instructions in the [Warm-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/warm-path.md)
+
