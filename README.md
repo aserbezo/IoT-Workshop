@@ -13,13 +13,13 @@ To implement a fleet management system that leverages IoT devices, IoT Hub, Data
 
 ### Solution Components and Architecture:
 
-![image](https://github.com/user-attachments/assets/d0b57eb0-3377-49f4-98d5-8900c7007062)
+![image](https://github.com/user-attachments/assets/ea429438-32a6-4331-a165-01edaa3daf46)
 
 
 
 ## Step 1: Create the Resources
 
-First, you need to create the following Azure resources:
+First, you need to create the following Azure resources you could use the bicep mina file located in folder or create them manually:
 
 1. IoT Hub
 2. Storage Account
