@@ -13,7 +13,8 @@ To implement a fleet management system that leverages IoT devices, IoT Hub, Data
 
 ### Solution Components and Architecture:
 
-![image](https://github.com/user-attachments/assets/ea429438-32a6-4331-a165-01edaa3daf46)
+![image](https://github.com/user-attachments/assets/23ac777a-8ca1-41ff-9552-f7839429c4c0)
+
 
 
 
@@ -21,18 +22,20 @@ To implement a fleet management system that leverages IoT devices, IoT Hub, Data
 
 First, you need to create the following Azure resources you could use the bicep mina file located in folder or create them manually:
 
+[Bicep deployment](https://github.com/aserbezo/IoT-Workshop/tree/main/bicep_deployment)
+
+
 1. IoT Hub
 2. Storage Account
-3.Stream Analytics Job
+3. Stream Analytics Job
 4. Databricks Workspace
 5. Key Vault
-6. Event Hub
 
 ## Step 2: Download the IoT Simulator
 
 Clone the IoT Device Simulator repository and follow the instructions in the README.md file:
 
-- https://github.com/aserbezo/IoT-Device-Simulator.git
+[IoT-simulator](https://github.com/aserbezo/IoT-Device-Simulator.git)
 
 ```sh
 git clone https://github.com/aserbezo/IoT-Device-Simulator.git
