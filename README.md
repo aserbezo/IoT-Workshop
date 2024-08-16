@@ -62,3 +62,4 @@ This simulator will generate telemetry data for your IoT devices.
 
 Follow the instructions in the [Hot-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/hot-path.md)
 
+## Step 5: Create a Hot Warm Path
