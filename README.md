@@ -62,9 +62,13 @@ This simulator will generate telemetry data for your IoT devices.
 
 Follow the instructions in the [Hot-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/hot-path.md)
 
-## Step 5: Create a  Warm Path
+## Step 5: Create a  Warm Path with Medalion Architecture 
 
 ![image](https://github.com/user-attachments/assets/3c43a192-440d-4e45-a9a8-14eb5380d11e)
+
+--------------------------------------------------------------------------------------
+![image](https://github.com/user-attachments/assets/7d657742-4ad2-40f8-8a73-b1f1c7d0cfb5)
+
 
 Follow the instructions in the [Warm-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/warm-path.md)
 
