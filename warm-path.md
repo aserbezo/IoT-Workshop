@@ -6,3 +6,4 @@
 2. Configure the stram job
 
 3. Uplaod the notebooks
+4.  Configure the key vault 
