@@ -35,7 +35,7 @@ First, you need to create the following Azure resources you could use the bicep 
 
 Clone the IoT Device Simulator repository and follow the instructions in the README.md file:
 
-[IoT-simulator](https://github.com/aserbezo/IoT-Device-Simulator.git)
+[IoT-Device-Simulator](https://github.com/aserbezo/IoT-Device-Simulator.git)
 
 ```sh
 git clone https://github.com/aserbezo/IoT-Device-Simulator.git
