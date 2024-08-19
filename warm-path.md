@@ -12,8 +12,7 @@ You need to create the following storage containers:
 ![Storage Containers](https://github.com/user-attachments/assets/90bee268-e22b-4740-a6ed-c0749216ad24)
 
 ## 2. Upload the Notebooks
-
-Upload your notebooks to the appropriate locations. 
+dowwlaod the notebooks [here](https://github.com/aserbezo/IoT-Workshop/blob/main/notebooks.dbc) and upload your notebooks to the appropriate locations. 
 
 ## 3. Configure the Stream Job
 
