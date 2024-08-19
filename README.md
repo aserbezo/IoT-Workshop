@@ -2,7 +2,7 @@
 
 ### Business Problem
 A logistics company operates a fleet of vehicles for transporting goods across various regions. The company faces challenges in:
-- Optimizing fleet operations
+- Optimizing vehicle operations
 - Managing fuel consumption
 - Ensuring vehicle maintenance
 - Tracking vehicle locations
@@ -10,7 +10,7 @@ A logistics company operates a fleet of vehicles for transporting goods across v
 
 
 ### Objective
-To implement a fleet management system that leverages IoT devices, IoT Hub, Databricks, Azure Stream Analytics, and Power BI to monitor and optimize vehicle operations in real-time, leading to:
+To implement a vehicle management system that leverages IoT devices, IoT Hub, Databricks, Azure Stream Analytics, and Power BI to monitor and optimize vehicle operations in real-time, leading to:
 - Cost savings
 - Enhanced safety
 - Improved operational efficiency
