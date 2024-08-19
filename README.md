@@ -1,26 +1,30 @@
 # IoT-Workshop
 
+### Business Problem
+A logistics company operates a fleet of vehicles for transporting goods across various regions. The company faces challenges in:
+- Optimizing fleet operations
+- Managing fuel consumption
+- Ensuring vehicle maintenance
+- Tracking vehicle locations
+- Analyzing driving behaviors to reduce accidents and improve overall efficiency
 
 
-### Business Problem:
-A logistics company operates a fleet of vehicles for transporting goods across various regions. 
-The company faces challenges in optimizing fleet operations, including managing fuel consumption, ensuring vehicle maintenance, tracking vehicle locations, and analyzing driving behaviors to reduce accidents and improve overall efficiency.
-
-
-### Objective:
-To implement a fleet management system that leverages IoT devices, IoT Hub, Databricks, Azure Stream Analytics, and Power BI to monitor and optimize vehicle operations in real-time, leading to cost savings, enhanced safety, and improved operational efficiency.
-
+### Objective
+To implement a fleet management system that leverages IoT devices, IoT Hub, Databricks, Azure Stream Analytics, and Power BI to monitor and optimize vehicle operations in real-time, leading to:
+- Cost savings
+- Enhanced safety
+- Improved operational efficiency
 
 ### Solution Components and Architecture:
 
-![image](https://github.com/user-attachments/assets/0efd86a5-8969-4c3b-a2c9-4512f0a0a3f1)
+![Solution Architecture](https://github.com/user-attachments/assets/0efd86a5-8969-4c3b-a2c9-4512f0a0a3f1)
 
 
 
 
 ## Step 1: Create the Resources
 
-First, you need to create the following Azure resources you could use the bicep mina file located in folder or create them manually:
+Create the following Azure resources. You can either use the Bicep deployment file located in the folder or create them manually:
 
 [Bicep deployment](https://github.com/aserbezo/IoT-Workshop/tree/main/bicep_deployment)
 
@@ -36,13 +40,13 @@ First, you need to create the following Azure resources you could use the bicep 
 
 After setting up your IoT Hub, register the IoT devices that will send telemetry data. This can be done through the Azure portal:
 
-- https://learn.microsoft.com/en-us/azure/iot-hub/create-connect-device?tabs=portal
+- [Azure IoT Hub Device Registration](https://learn.microsoft.com/en-us/azure/iot-hub/create-connect-device?tabs=portal)
 
-Do not forget to copy the primary connection string for the devices/
+Make sure to copy the primary connection string for the devices.
 
-## Step 3: Download the IoT Simulator and set Connection string from the devices
+## Step 3: Download the IoT Simulator and Set Connection String
 
-Clone the IoT Device Simulator repository and follow the instructions in the README.md file:
+Clone the IoT Device Simulator repository and follow the instructions in the `README.md` file:
 
 [IoT-Device-Simulator](https://github.com/aserbezo/IoT-Device-Simulator.git)
 
@@ -53,14 +57,11 @@ git clone https://github.com/aserbezo/IoT-Device-Simulator.git
 This simulator will generate telemetry data for your IoT devices.
 
 
-
-
-
 ## Step 4: Create a Hot Path
 ----------------------------------------------------
 ![image](https://github.com/user-attachments/assets/46a8b747-747d-4afb-b788-6f5f359fed46)
 
-Follow the instructions in the [Hot-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/hot-path.md)
+Follow the instructions in  [Hot-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/hot-path.md)
 
 ## Step 5: Create a  Warm Path with Medalion Architecture 
 
@@ -72,3 +73,4 @@ Follow the instructions in the [Hot-path instructions to complete the setup](htt
 
 Follow the instructions in the [Warm-path instructions to complete the setup](https://github.com/aserbezo/IoT-Workshop/blob/main/warm-path.md)
 
+## STEP 6 Delete All Resources
