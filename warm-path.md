@@ -1,7 +1,22 @@
 # Data Processing Pipeline Setup
 
+
 This guide will walk you through setting up a data processing pipeline, including configuring storage containers, uploading notebooks, and running stream jobs. 
 
+## Table of Contents
+
+- [1. Create Storage Containers](#1-create-storage-containers)
+- [2. Upload the Notebooks](#2-upload-the-notebooks)
+- [3. Configure the Stream Job](#3-configure-the-stream-job)
+- [4. Add Query to the Stream Job](#4-add-query-to-the-stream-job)
+- [5. Run the Job and Start Simulator](#5-run-the-job-and-start-simulator)
+- [6. Link Key Vault to Databricks](#6-link-key-vault-to-databricks)
+- [7. Follow the Instructions for Notebooks](#7-follow-the-instructions-for-notebooks)
+  - [7.1 Bronze Notebook](#71-bronze-notebook)
+  - [7.2 Silver Notebook](#72-silver-notebook)
+  - [7.3 Gold Notebook](#73-gold-notebook)
+- [8. Visualization Notebook](#8-visualization-notebook)
+- 
 ## 1. Create Storage Containers
 
 You need to create the following storage containers:
@@ -12,7 +27,17 @@ You need to create the following storage containers:
 ![Storage Containers](https://github.com/user-attachments/assets/90bee268-e22b-4740-a6ed-c0749216ad24)
 
 ## 2. Upload the Notebooks
-dowwlaod the notebooks [here](https://github.com/aserbezo/IoT-Workshop/blob/main/notebooks.dbc) and upload your notebooks to the appropriate locations. 
+
+To upload the notebooks to your environment, follow these steps:
+1. **Download the Notebooks:**
+   - You can download the notebooks directly from the current repository by [clicking here](https://github.com/aserbezo/IoT-Workshop/blob/main/notebooks.dbc).
+   - Alternatively, download the notebooks from the repository and save them to your local machine.
+
+2. **Upload the Notebooks to the Appropriate Locations:**
+   - **For Databricks:**
+     1. Open your Databricks workspace.
+     2. Navigate to the **Workspace** or **Notebooks** section.
+     3. Click on the **Upload** button or drag and drop the downloaded `.dbc` file into the workspace.
 
 ## 3. Configure the Stream Job
 
@@ -77,7 +102,7 @@ If successful, you should see data in the bronze layer.
 
 ## 7. Follow the Instructions for Notebooks
 
-### Bronze Notebook
+### 7.1 Bronze Notebook
 
 The first notebook picks the raw data and saves it as a Delta table in the bronze layer.
 ![image](https://github.com/user-attachments/assets/f39ba894-b565-452e-abc9-03a02188d77c)
@@ -86,7 +111,7 @@ The first notebook picks the raw data and saves it as a Delta table in the bronz
 We are using a streaming API to read data from raw and save it as a Delta table.
 
 -----------------------------------------------------------------------------------------------
-### Silver Notebook
+### 7.2 Silver Notebook
 
 The second notebook normalizes the data, adds a Fahrenheit column, and saves it in the silver layer as a Delta table.
 ![image](https://github.com/user-attachments/assets/e283beab-b5ca-45df-8a8b-a279c6e4df0e)
@@ -95,7 +120,7 @@ We are using a streaming API to read data from the bronze Delta table and save i
 
 -----------------------------------------------------------------------------------------------------------
 
-### Gold Notebook
+### 7.3 Gold Notebook
 
 Gold Notebiik will pick selecting column and save them in gold delta table ready for visulazitaion 
 
@@ -103,7 +128,7 @@ The Gold notebook selects specific columns and saves them in the gold Delta tabl
 
 ------------------------------------------------------------------
 
-### Visualization Notebook
+### 8. Visualization Notebook
 
 The final notebook displays the data using maps and various dashboards. Feel free to explore and play with the data.
 
