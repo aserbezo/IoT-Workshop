@@ -38,11 +38,18 @@ Create the following Azure resources. You can either use the Bicep deployment fi
 
 ## Step 2: Register the IoT Devices in IoT Hub
 
-After setting up your IoT Hub, register the IoT devices that will send telemetry data. This can be done through the Azure portal:
+After setting up your IoT Hub, register the IoT devices that will send telemetry data. You can do this through the Azure portal by following the instructions in the link below:
 
 - [Azure IoT Hub Device Registration](https://learn.microsoft.com/en-us/azure/iot-hub/create-connect-device?tabs=portal)
 
-Make sure to copy the primary connection string for the devices.
+In the device management section, add the following three devices with these names:
+
+- Johny
+- james
+- jason
+![image](https://github.com/user-attachments/assets/cb787ce3-a8b7-485a-bc2d-40bfbc5d06ee)
+
+Be sure to copy the primary connection string for each device into Notepad.
 
 ## Step 3: Download the IoT Simulator and Set Connection String
 
